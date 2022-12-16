@@ -111,12 +111,12 @@ const Home = () => {
 
       <Grid container spacing={2}>
         <Grid item xs={2}>
-          <LeftSideComponent value={category} heading="Related Category" />
-          <LeftSideComponent value={brand} heading="Related Brands" />
-          <LeftSideComponent value={Business} heading="Business Type" />
-          <LeftSideComponent value={strength} heading="Strength" />
-          <LeftSideComponent value={manufacture} heading="Manufacture" />
-          <LeftSideComponent value={manufacture} heading="Presciption / Non Presciption" />
+          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={category} heading="Related Category" />
+          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={brand} heading="Related Brands" />
+          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={Business} heading="Business Type" />
+          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={strength} heading="Strength" />
+          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={manufacture} heading="Manufacture" />
+          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={manufacture} heading="Presciption / Non Presciption" />
         </Grid>
         <Grid item xs={10}>
           <Grid container spacing={2}>
