@@ -15,7 +15,7 @@ import IconButton from "@mui/material/IconButton";
 const Home = () => {
   const [searchText, setSearchText] = React.useState("");
   const [data, setData] = React.useState([]);
-  const [filterArray, setFilterArray] = React.useState(["Aceclofenac", "500mg"]);
+  const [filterArray, setFilterArray] = React.useState([]);
 
   const category = ["Paracetamol Tablets", "Paracetamol Syrup", "Paracetamol Powder", "Aceclofenac", "Oral Suspension", "Mefenamic Syrup"];
   const strength = ["500mg", "650mg"];
@@ -27,13 +27,9 @@ const Home = () => {
     console.log("searchText :::: ", searchText);
   }
 
-  const handleDeleteFilterArray = (item) => {
-    const newFilterArray = filterArray.filter((value) => value !== item);
-    setFilterArray(newFilterArray);
-  }
-
   React.useEffect(() => {
     setData(recordData);
+    setFilterArray(["Aceclofenac", "500mg"]);
   }, [])
 
   return (
@@ -83,9 +79,6 @@ const Home = () => {
                 }
               }}
               endIcon={<CloseIcon />}
-              onClick={() => {
-                handleDeleteFilterArray(value);
-              }}
             >
               {value}
             </Button>
@@ -99,9 +92,6 @@ const Home = () => {
                 borderRadius: '0px',
                 color: 'red'
               }}
-              onClick={() => {
-                setFilterArray([]);
-              }}
             >
               Remove all
             </IconButton>
@@ -111,12 +101,12 @@ const Home = () => {
 
       <Grid container spacing={2}>
         <Grid item xs={2}>
-          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={category} heading="Related Category" />
-          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={brand} heading="Related Brands" />
-          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={Business} heading="Business Type" />
-          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={strength} heading="Strength" />
-          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={manufacture} heading="Manufacture" />
-          <LeftSideComponent filterArray={filterArray} setFilterArray={setFilterArray} value={manufacture} heading="Presciption / Non Presciption" />
+          <LeftSideComponent value={category} heading="Related Category" />
+          <LeftSideComponent value={brand} heading="Related Brands" />
+          <LeftSideComponent value={Business} heading="Business Type" />
+          <LeftSideComponent value={strength} heading="Strength" />
+          <LeftSideComponent value={manufacture} heading="Manufacture" />
+          <LeftSideComponent value={manufacture} heading="Presciption / Non Presciption" />
         </Grid>
         <Grid item xs={10}>
           <Grid container spacing={2}>

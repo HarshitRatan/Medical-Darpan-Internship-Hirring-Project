@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Checkbox from '@mui/material/Checkbox';
 import CloseIcon from '@mui/icons-material/Close';
 
-const LeftSideComponent = ({ value, heading, filterArray, setFilterArray }) => {
+const LeftSideComponent = ({ value, heading }) => {
 
     const style_Before = {
         width: '100%',
@@ -25,16 +25,6 @@ const LeftSideComponent = ({ value, heading, filterArray, setFilterArray }) => {
         justifyContent: 'center',
         alignItems: 'center',
         padding: '5px'
-    }
-
-    const handleClick = (item) => {
-        if (!filterArray.includes(item)) {
-            const newFilterArray = [...filterArray, item];
-            setFilterArray(newFilterArray);
-        } else {
-            const newFilterArray = filterArray.filter((value) => value !== item);
-            setFilterArray(newFilterArray);
-        }
     }
 
     return (
@@ -72,7 +62,7 @@ const LeftSideComponent = ({ value, heading, filterArray, setFilterArray }) => {
             >
                 {
                     value.map((val) => (
-                        <Box key={val} onClick={() => handleClick(val)}>
+                        <Box key={val}>
                             <Checkbox
                                 sx={{
                                     borderRadius: '0px',
