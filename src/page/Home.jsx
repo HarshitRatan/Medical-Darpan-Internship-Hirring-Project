@@ -18,7 +18,7 @@ const Home = () => {
   const [filterArray, setFilterArray] = React.useState(["Aceclofenac", "500mg"]);
 
   const category = ["Paracetamol Tablets", "Paracetamol Syrup", "Paracetamol Powder", "Aceclofenac", "Oral Suspension", "Mefenamic Syrup"];
-  const strength = ["500 mg", "650mg"];
+  const strength = ["500mg", "650mg"];
   const manufacture = ["Intas Pharmautical Ltd", "Alkem Laboratories Ltd"];
   const Business = ["Wholesaler", "Manufacturer", "Retailer", "Exporter"];
   const brand = ["Cipmol Paracetamol", "Pandal Paracetamol", "Combiflam", "Crocin Tablets", "Calpol Paracetamol", "Sumo Tablet"];
