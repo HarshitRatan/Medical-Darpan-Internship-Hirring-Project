@@ -7,10 +7,15 @@ import MyCard from "../component/MyCard";
 import Grid from '@mui/material/Grid';
 import recordData from '../data/dataRecord.json';
 import LeftSideComponent from "../component/LeftSideComponent";
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from "@mui/material/IconButton";
 
 const Home = () => {
   const [searchText, setSearchText] = React.useState("");
   const [data, setData] = React.useState([]);
+  const [filterArray, setFilterArray] = React.useState(["Aceclofenac", "500mg"]);
 
   const category = ["Paracetamol Tablets", "Paracetamol Syrup", "Paracetamol Powder", "Aceclofenac", "Oral Suspension", "Mefenamic Syrup"];
   const strength = ["500 mg", "650mg"];
@@ -22,27 +27,88 @@ const Home = () => {
     console.log("searchText :::: ", searchText);
   }
 
+  const handleDeleteFilterArray = (item) => {
+    const newFilterArray = filterArray.filter((value) => value !== item);
+    setFilterArray(newFilterArray);
+  }
+
   React.useEffect(() => {
     setData(recordData);
   }, [])
 
   return (
-    <Container
-      sx={{
-        // border: '2px solid red',
-        mb: 20
-      }}
-    >
+    <Container sx={{ mb: 20 }}>
       <MyBreadCrumbs />
       <Stack
         direction="row"
         justifyContent="flex-start"
         alignItems="center"
         spacing={0}
-        sx={{ width: '100%', mb: 4 }}
+        sx={{ width: '100%', mb: 2 }}
       >
         <SearchFieldComponent value={searchText} setValue={setSearchText} handleSearch={handleSearch} />
       </Stack>
+
+      <Stack
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
+        spacing={2}
+        sx={{ width: '100%', mb: 2 }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: '600',
+            color: '#6f6a6a'
+          }}
+        >
+          Paracetamol
+          <span style={{ fontSize: '14px', marginLeft: "5px", fontWeight: '550' }}>(128 Product)</span>
+        </Typography>
+        {
+          filterArray.map((value) => (
+            <Button
+              key={value}
+              variant="container"
+              sx={{
+                backgroundColor: '#00a69c',
+                color: '#e8f1f8',
+                borderRadius: '5px',
+                height: '25px',
+                fontSize: '11px',
+                fontWeight: '600',
+                "&:hover": {
+                  backgroundColor: '#00a69c'
+                }
+              }}
+              endIcon={<CloseIcon />}
+              onClick={() => {
+                handleDeleteFilterArray(value);
+              }}
+            >
+              {value}
+            </Button>
+          ))
+        }
+        {
+          filterArray.length > 0 && (
+            <IconButton
+              sx={{
+                fontSize: "14px",
+                borderRadius: '0px',
+                color: 'red'
+              }}
+              onClick={() => {
+                setFilterArray([]);
+              }}
+            >
+              Remove all
+            </IconButton>
+          )
+        }
+      </Stack>
+
       <Grid container spacing={2}>
         <Grid item xs={2}>
           <LeftSideComponent value={category} heading="Related Category" />
