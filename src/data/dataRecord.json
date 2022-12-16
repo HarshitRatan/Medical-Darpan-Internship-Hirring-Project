@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Favipiravir 400mg (Fabiflu) Tablets",
+    "prize": "1,775",
+    "shopName": "Glenmark Pharmaceutical Limited",
+    "shopAddress": "PARVAT PATIYA, SURAT, GUJRAT",
+    "image": "./images/photo_1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Favipiravir 400mg (Fabiflu) Tablets",
+    "prize": "1,775",
+    "shopName": "Glenmark Pharmaceutical Limited",
+    "shopAddress": "PARVAT PATIYA, SURAT, GUJRAT",
+    "image": "./images/photo_1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Favipiravir 400mg (Fabiflu) Tablets",
+    "prize": "1,775",
+    "shopName": "Glenmark Pharmaceutical Limited",
+    "shopAddress": "PARVAT PATIYA, SURAT, GUJRAT",
+    "image": "./images/photo_1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Favipiravir 400mg (Fabiflu) Tablets",
+    "prize": "1,775",
+    "shopName": "Glenmark Pharmaceutical Limited",
+    "shopAddress": "PARVAT PATIYA, SURAT, GUJRAT",
+    "image": "./images/photo_1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Favipiravir 400mg (Fabiflu) Tablets",
+    "prize": "1,775",
+    "shopName": "Glenmark Pharmaceutical Limited",
+    "shopAddress": "PARVAT PATIYA, SURAT, GUJRAT",
+    "image": "./images/photo_1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Favipiravir 400mg (Fabiflu) Tablets",
+    "prize": "1,775",
+    "shopName": "Glenmark Pharmaceutical Limited",
+    "shopAddress": "PARVAT PATIYA, SURAT, GUJRAT",
+    "image": "./images/photo_1.jpg"
+  }
+]

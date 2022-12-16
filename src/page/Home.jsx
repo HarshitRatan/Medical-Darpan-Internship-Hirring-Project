@@ -5,14 +5,19 @@ import MyBreadCrumbs from "../component/MyBreadCrumbs";
 import SearchFieldComponent from "../component/SearchFieldComponent";
 import MyCard from "../component/MyCard";
 import Grid from '@mui/material/Grid';
+import recordData from '../data/dataRecord.json';
 
 const Home = () => {
   const [searchText, setSearchText] = React.useState("");
-  const [data, setData] = React.useState(["1", "2", "3", "4", "5", "6"]);
+  const [data, setData] = React.useState([]);
 
   const handleSearch = () => {
     console.log("searchText :::: ", searchText);
   }
+
+  React.useEffect(() => {
+    setData(recordData);
+  }, [])
 
   return (
     <Container
@@ -32,9 +37,9 @@ const Home = () => {
       </Stack>
       <Grid container spacing={2}>
         {
-          data.map((value) => (
-            <Grid item xs={12} sm={6} md={4} key={value}>
-              <MyCard />
+          data.map((val) => (
+            <Grid item xs={12} sm={6} md={4} key={val.id}>
+              <MyCard value={val} />
             </Grid>
           ))
         }

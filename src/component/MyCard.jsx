@@ -8,7 +8,7 @@ import CardActions from '@mui/material/CardActions';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 
-export default function MyCard() {
+export default function MyCard({ value }) {
     return (
         <Card
             sx={{
@@ -31,7 +31,7 @@ export default function MyCard() {
             >
                 <CardMedia
                     component="img"
-                    image="./images/photo_1.jpg"
+                    image={value.image}
                     alt="tablet-image"
                     sx={{
                         borderRadius: '10px',
@@ -49,7 +49,7 @@ export default function MyCard() {
                         marginTop: '10px'
                     }}
                 >
-                    Favipiravir 400mg (Fabiflu) Tablets
+                    {value.name}
                 </Typography>
                 <Typography
                     gutterBottom
@@ -59,7 +59,7 @@ export default function MyCard() {
                         margin: '0px'
                     }}
                 >
-                    <span style={{ color: '#740b09' }}> Rs 1,775 </span>/
+                    <span style={{ color: '#740b09' }}> Rs {value.prize} </span>/
                     <span style={{ color: '#686868', fontSize: '14px' }}> Stripe</span>
                 </Typography>
                 <Typography
@@ -69,7 +69,7 @@ export default function MyCard() {
                         marginTop: '20px'
                     }}
                 >
-                    Glenmark Pharmaceutical Limited
+                    {value.shopName}
                 </Typography>
                 <Typography
                     variant="body2"
@@ -80,7 +80,7 @@ export default function MyCard() {
                         color: '#686868'
                     }}
                 >
-                    Parvat Patiya, Surat, Gujrat
+                    {value.shopAddress}
                 </Typography>
             </Stack>
             <Divider />
