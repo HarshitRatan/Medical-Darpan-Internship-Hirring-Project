@@ -13,7 +13,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import IconButton from "@mui/material/IconButton";
 
 const Home = () => {
-  const [searchText, setSearchText] = React.useState("");
+  const [searchText, setSearchText] = React.useState("Paracetamol");
   const [data, setData] = React.useState([]);
   const [filterArray, setFilterArray] = React.useState([]);
 
@@ -90,7 +90,7 @@ const Home = () => {
               sx={{
                 fontSize: "14px",
                 borderRadius: '0px',
-                color: 'red'
+                color: '#750b0b'
               }}
             >
               Remove all
