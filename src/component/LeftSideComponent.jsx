@@ -70,6 +70,7 @@ const LeftSideComponent = ({ value, heading }) => {
                                         backgroundColor: '#fff'
                                     }
                                 }}
+                                checked={val === "Aceclofenac" || val === "500mg"}
                                 icon={
                                     <>
                                         <Box sx={style_Before}>
